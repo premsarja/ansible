@@ -1,0 +1,10 @@
+#ansible
+
+ansible is configuartion management tool
+
+###inventru file
+---
+ inventry is nothing but the list of machine ip or dns names that you want ansible to be managed
+
+
+ ansible by deafault installs 2.9 as by deafault on AMI we will get python3
