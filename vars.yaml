@@ -1,7 +1,7 @@
 - name: demo on vars
   hosts: all
   vars:
-    URL: play.google.com
+    URL: play.google.com          #globall variable: all the tasks of the play can acess this variable
   tasks:
    - name: printing the variable
      ansible.builtin.debug:
