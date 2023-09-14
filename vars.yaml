@@ -15,4 +15,4 @@
 
    - name: unrelated variable
      ansible.builtin.debug:
-       msg: value of URL is {{URL}}    
+       msg: value of cURL is {{cURL}} 
