@@ -8,3 +8,10 @@
     - name: printing devops from tas2 of play1
       ansible.builtin.debug:
         msg: "devops real time project"   
+
+ - name: play1
+  hosts: all
+  tasks: 
+    - name: Printing hai from task1 of play1
+      ansible.builtin.debug:
+       msg: "happy ganesha festivall"       
