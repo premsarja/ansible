@@ -12,6 +12,6 @@
  - name: play1
    hosts: all
    tasks: 
-     - name: Printing hai from task1 of play1
+     - name: Printing hai from task1 of play2
        ansible.builtin.debug:
         msg: "happy ganesha festivall"        
