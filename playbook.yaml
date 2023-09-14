@@ -9,7 +9,7 @@
       ansible.builtin.debug:
         msg: "devops real time project"   
 
- - name: play1
+ - name: play2
    hosts: all
    tasks: 
      - name: Printing hai from task1 of play2
