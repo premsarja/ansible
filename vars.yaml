@@ -12,3 +12,7 @@
         msg: value of the URL is {{URL}}
      vars:
        URL: FB.COM         
+
+   - name: unrelated variable
+     ansible.builtin.debug:
+       msg: value of URL is {{URL}}    
