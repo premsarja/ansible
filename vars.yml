@@ -1,5 +1,5 @@
-- name: prem
-  hosts: PREPROD
+- name: printing age
+  hosts: all
   vars:
     age: 27
   tasks:
