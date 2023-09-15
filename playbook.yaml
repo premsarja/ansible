@@ -1,11 +1,11 @@
 - name: play1
   hosts: all
-  tasks: 
-    - name: Printing hai from task1 of play1
+  tasks:    #parent
+    - name: Printing hai from task1 of play1              #kids
       ansible.builtin.debug:
        msg: "hai maccha"
 
-    - name: printing devops from tas2 of play1
+    - name: printing devops from tas2 of play1            #kids
       ansible.builtin.debug:
         msg: "devops real time project"   
 
