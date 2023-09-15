@@ -2,4 +2,4 @@
   hosts: PREPROD
   tasks:
     - name: "seeing"
-      msg: "hai"
+       msg: "hai"
