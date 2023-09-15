@@ -1,0 +1,5 @@
+- name: play1
+  host: PREPROD
+  tasks:
+    - name: "seeing"
+      msg: "hai"
