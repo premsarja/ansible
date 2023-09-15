@@ -1,0 +1,3 @@
+- name: Printing hai from task1 of play1
+  ansible.builtin.debug:
+   msg: "hai maccha"
