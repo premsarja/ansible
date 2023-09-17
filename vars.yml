@@ -12,3 +12,4 @@
         msg: prem age is "{{age}}"
       vars: 
         age: 30       
+        msg: prem age is {{age}}
