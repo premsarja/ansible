@@ -1,5 +1,5 @@
 - name: printing age
-  hosts: production
+  hosts: prod
   vars:
     age: 27
   tasks:
