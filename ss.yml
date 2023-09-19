@@ -1,3 +1,0 @@
-- name: Printing msg
-  ansible.builtin.debug:
-   msg: "hai maccha"

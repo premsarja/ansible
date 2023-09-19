@@ -4,7 +4,7 @@
     age: 27
   tasks:
     - name: printing the age of prem
-      ansible.builtin.debug:
+      # ansible.builtin.debug:
         msg: prem age is"{{age}}"
         
     - name: local variable
