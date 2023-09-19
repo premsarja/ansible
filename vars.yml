@@ -1,10 +1,10 @@
 - name: printing age
-  hosts: all
+  hosts: preprod
   vars:
     age: 27
   tasks:
     - name: printing the age of prem
-      # ansible.builtin.debug:
+      ansible.builtin.debug:
         msg: prem age is"{{age}}"
         
     - name: local variable
@@ -12,4 +12,4 @@
         msg: prem age is "{{age}}"
       vars: 
         age: 30       
-        msg: prem age is {{age}}
+        msg: prem age is "{{age}}""
