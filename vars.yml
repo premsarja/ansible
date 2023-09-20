@@ -2,26 +2,26 @@
   hosts: all
   vars:
     age: 27
-  vars_files:
-    - "{{ENV}}.yml"  
-  vars_prompt: 
+vars_files:
+ - "{{ENV}}.yml"  
+vars_prompt: 
     - name: age
       prompt: enter your name    
       private: false
   tasks: 
-   - name: printing message of vars
+    -  name: printing message of vars
      ansible.builtin.debug:
-       msg: prem age is "{{age}}"
+       msg: prem age is {{age}}
 
-   - name: printing message of varsss
+    - name: printing message of varsss
      ansible.builtin.debug:
-       msg: prem age is "{{age}}"
+       msg: prem age is {{age}}
      vars:
        age: 30 
   #  - name: Demo on using CLI age
   #    ansible.builtin.debug:
   #      msg: prem passing age is "{{CLI}}"    
 
-   - name: This is env specific
-     ansible.builtin.debug:
+    - name: This is env specific
+      ansible.builtin.debug:
        msg: type of instance to be used {{INS_TYPE}} 
