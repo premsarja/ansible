@@ -1,5 +1,5 @@
 - name: demo on variable
-  hosts: all
+  hosts: prod
   vars:
     age: 27
   tasks: 
