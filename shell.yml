@@ -6,8 +6,7 @@
       register: OUT
 
     - name: printing uptime command
-      ansible.builtin.destdoutbug:
-       msg: "{{OUT.stdout}}"
+      ansible.builtin.debug:
+       msg: "{{OUT.}}"
 
   
-      
