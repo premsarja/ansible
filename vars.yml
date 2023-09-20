@@ -5,6 +5,7 @@
   vars_prompt: 
     - name: age
       prompt: enter your name    
+      private: false
   tasks: 
    - name: printing message of vars
      ansible.builtin.debug:
