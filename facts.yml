@@ -1,5 +1,5 @@
 - name: demo on facts
-  hosts: all
+  hosts: preprod
   tasks:
     - name: printing deafault variable
       ansible.builtin.debug:
