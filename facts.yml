@@ -1,6 +1,9 @@
 - name: demo on facts
   hosts: prod
   tasks:
-    - name: printing deafault variable
+    - name: printing the flavour of  prod machine
       ansible.builtin.debug:
         msg: server flavour is "{{ansible_distribution}}"  
+    - name: printing the macaddress of machine
+      ansible.builtin.debug:
+        msg: server flavour is "{{ansible_deafault_ipv4.macaddress}}"      
