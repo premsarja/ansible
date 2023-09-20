@@ -2,6 +2,8 @@
   hosts: all
   vars:
     age: 27
+  vars_files:
+   - "{{ENV}}.yml"  
   tasks: 
    - name: printing message of vars
      ansible.builtin.debug:
@@ -12,3 +14,6 @@
        msg: prem age is "{{age}}"
      vars:
        age: 30      
+   - name: this is for env
+     ansible.builtin.debug:
+       msg: type of instance to be used {{INS_TYPE}}
