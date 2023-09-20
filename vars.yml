@@ -2,16 +2,16 @@
   hosts: all
   vars:
     age: 27
-vars_files:
- - "{{ENV}}.yml"  
-vars_prompt: 
+  vars_files:
+    - "{{ENV}}.yml"  
+  vars_prompt: 
     - name: age
       prompt: enter your name    
       private: false
   tasks: 
-    -  name: printing message of vars
-     ansible.builtin.debug:
-       msg: prem age is {{age}}
+    - name: printing message of vars
+      ansible.builtin.debug:
+        msg: prem age is {{age}}
 
     - name: printing message of varsss
      ansible.builtin.debug:
