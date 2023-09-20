@@ -6,3 +6,9 @@
    - name: printing message of vars
      ansible.builtin.debug:
        msg: prem age is "{{age}}"
+
+   - name: printing message of vars
+     ansible.builtin.debug:
+       msg: prem age is "{{age}}"
+     vars:
+       age: 30      
