@@ -12,4 +12,7 @@
        msg: prem age is "{{age}}"
      vars:
        age: 30 
+   - name: Demo on using CLI age
+     ansible.builtin.debug:
+       msg: prem passing age is "{{CLIage}}"    
 
