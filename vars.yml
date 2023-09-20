@@ -16,4 +16,4 @@
        age: 30      
    - name: this is for env
      ansible.builtin.debug:
-       msg: type of instance to be used {{INS_TYPE}}
+       msg: type of instance to be used "{{INS_TYPE}}""
