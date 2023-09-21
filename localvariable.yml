@@ -5,8 +5,10 @@
   tasks:
     - name: printing the globall variable
       ansible.builtin.debug:
-        msg: prem age is "{{age}}"
-      - vars:
-          age: 40
-        msg: prem age is "{{age}}"    
+        msg: prem age is "{{age}}"  
        
+    - name: printing message of varsss
+      ansible.builtin.debug:
+       msg: prem age is {{age}}
+      vars:
+       age: 30 
