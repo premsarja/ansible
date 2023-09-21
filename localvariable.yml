@@ -1,0 +1,12 @@
+- name: printing globall variable
+  hosts: all
+  vars: 
+    - age: 30
+  tasks:
+    - name: printing the globall variable
+      ansible.builtin.debug:
+        msg: prem age is "{{age}}"
+      - vars_files:
+          age: 40
+        msg: prem age is "{{age}}"    
+       
