@@ -11,4 +11,4 @@
       ansible.builtin.debug:
        msg: prem age is {{age}}
        vars:
-         age: 45 
+         - age: 45 
