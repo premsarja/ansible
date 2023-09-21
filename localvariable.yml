@@ -10,5 +10,5 @@
     - name: printing message of varsss
       ansible.builtin.debug:
        msg: prem age is {{age}}
-      vars:
+      vars_files:
        age: 45 
