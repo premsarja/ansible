@@ -4,6 +4,7 @@
     - name: printing the flavour of  prod machine
       ansible.builtin.debug:
         msg: server flavour is "{{ansible_distribution}}"  
+        
     - name: printing the macaddress of machine
       ansible.builtin.debug:
         msg: mac address of ansible is {{ansible_default_ipv4.macaddress}}     
