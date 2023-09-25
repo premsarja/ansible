@@ -7,12 +7,12 @@
 
     - name: printing uptime command
       ansible.builtin.debug:
-       msg: "{{OUT.stdout}}"
+       msg: "{{OUT}}"
     
-    - name: declaring the variable
-      set_fact: 
-        CODE: "{{OUT.stdout}}"
+    # - name: declaring the variable
+    #   set_fact: 
+    #     CODE: "{{OUT.stdout}}"
 
-    - name: printing the variable
-      ansible.builtin.debug:
-        msg: "{{CODE}}"    
+    # - name: printing the variable
+    #   ansible.builtin.debug:
+    #     msg: "{{CODE}}"    
