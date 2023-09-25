@@ -7,7 +7,7 @@
 
     - name: printing uptime command
       ansible.builtin.debug:
-       msg: "{{stdout}}"
+       msg: "{{OUT.stdout}}"
     
     - name: declaring the variable
       set_fact: 
