@@ -1,0 +1,6 @@
+- name: demo on privilege  esclation
+  hosts: all
+  tasks:
+    - name: checking user id 
+      ansible.builtin.shell: uptime
+      register: OUT
