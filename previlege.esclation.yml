@@ -1,6 +1,6 @@
 - name: demo on privilege  esclation
   hosts: all
-  # become: yes       # sudo privilege as root
+  become: yes       # sudo privilege as root
   tasks:
     - name: checking user id 
       ansible.builtin.shell: id
