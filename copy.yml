@@ -1,0 +1,7 @@
+- name: demo on copy
+  hosts: all
+  become: yes
+  tasks:
+    - name: copying file with owner and permision
+      ansible.builtin.copy:
+        src: 
