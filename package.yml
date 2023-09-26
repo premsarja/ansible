@@ -1,4 +1,4 @@
-- name: demo on nginx nginx
+- name: demo on package nginx
   hosts: all
   become: yes
   tasks: 
