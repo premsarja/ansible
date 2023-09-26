@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: checking user id 
-      ansible.builtin.shell: uptime
+      ansible.builtin.shell: id
       register: OUT
 
     - name: printing the uptime
