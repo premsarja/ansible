@@ -1,0 +1,15 @@
+- name: demo on package installation
+  hosts: all
+  become: yes
+  tasks:
+    - name: removing nginx
+      ansible.builtin.package:
+        name: nginx
+        state: absent
+
+    - name: installing httpd
+      ansible.builtin.package:
+        name: 
+         - httpd
+         - jq
+        state: present    
