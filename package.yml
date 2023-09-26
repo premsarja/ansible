@@ -1,4 +1,4 @@
-- name: installing nginx
+- name: demo on nginx nginx
   hosts: all
   become: yes
   tasks: 
