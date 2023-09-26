@@ -1,0 +1,7 @@
+- name: demo on conditions
+  hosts: all
+  tasks: 
+    - name: only run if the distribution is centos
+      ansible.builtin.debug:
+        msg: welcome to "{{ansible_distribution}}"
+      when: ansible_distribution == "centos"  
