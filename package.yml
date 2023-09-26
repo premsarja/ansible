@@ -9,6 +9,6 @@
      - name: installing the packages
        ansible.builtin.package:
          name: "{{item}}"
-       state: present
+         state: present
        with.items: "{{packages_to_install}}"
          
