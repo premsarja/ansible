@@ -8,7 +8,6 @@
   tasks: 
      - name: installing nginx
        ansible.builtin.package:
-         name: nginx
-         state: present
+       state: present
        with.items: "{{packages_to_install}}"
          
