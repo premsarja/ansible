@@ -5,3 +5,8 @@
       ansible.builtin.debug:
         msg: welcome to "{{ansible_distribution}}"
       when: ansible_distribution == "CentOS"  
+
+    - name: only run if the distribution is ubuntu
+      ansible.builtin.debug:
+        msg: welcome to "{{ansible_distribution}}"
+      when: ansible_distribution == "ubuntu"
