@@ -1,6 +1,6 @@
 - name: demo on privilege  esclation
   hosts: all
-  become: yes
+  become: yes       # sudo privilege as root
   tasks:
     - name: checking user id 
       ansible.builtin.shell: id
@@ -8,4 +8,4 @@
 
     - name: printing the uptime
       ansible.builtin.debug:
-        msg: "{{OUT.stdout}}"  
+        msg: "{{OUT}}"  
