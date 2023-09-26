@@ -1,0 +1,7 @@
+- name: installaning nginx
+  hosts: all
+  tasks: 
+     - name: installing nginx
+       ansible.builtin.debug:
+         name: nginx
+         state: present
