@@ -1,14 +1,8 @@
 - name: demo on package nginx
   hosts: all
-  vars: 
-   packages_to_install:
-   - nginx
-   - tree
   become: yes
   tasks: 
-     - name: installing the packages
+     - name: installing nginx
        ansible.builtin.package:
-         name: "{{item}}"
+         name: nginx
          state: present
-       with.items: "{{packages_to_install}}"
-         
