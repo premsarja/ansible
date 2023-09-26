@@ -1,0 +1,13 @@
+- name: demo on package nginx
+  hosts: all
+  vars:
+    packages_to_install:
+      - nginx
+      - tree
+  become: yes
+  tasks:
+    - name: installing the packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ packages_to_install }}"
