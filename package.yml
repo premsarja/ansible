@@ -6,7 +6,7 @@
    - tree
   become: yes
   tasks: 
-     - name: installing nginx
+     - name: installing the packages
        ansible.builtin.package:
        state: present
        with.items: "{{packages_to_install}}"
