@@ -7,7 +7,7 @@
 #         src: /home/centos/alt
 #         dest: /home/centos/systemd.service
 ---
-- hosts: all
+- hosts: dev
   tasks:
     - name: Transfer file from ServerA to ServerB
       synchronize:
