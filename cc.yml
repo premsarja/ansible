@@ -3,7 +3,7 @@
   hosts: all
   become: yes   # sudo privilege
   tasks:
-    - name:  file
+    - name: file
       ansible.builtin.copy:
         src: /home/centos/alt
         dest: /home/centos/
