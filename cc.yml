@@ -7,4 +7,3 @@
       copy:
         src: /home/centos/alt
         dest: /home/centos/systemd.service
----
