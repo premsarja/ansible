@@ -4,10 +4,10 @@
   become: yes   # sudo privilege
   tasks:
     - name: file
-      ansible.builtin.copy:
-        src: /home/centos/alt
-        dest: /home/centos/
-        owner: centos
-        group: centos
-        mode: '0644'
+      copy:
+        - src: /home/centos/alt
+        - dest: /home/centos/
+        - owner: centos
+        - group: centos
+        - mode: '0644'
       remote_src: yes  # Specify that the source file exists on the Ansible controller
