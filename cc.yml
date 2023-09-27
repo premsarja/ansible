@@ -1,17 +1,10 @@
-# - name: demo on copy
-#   hosts: all
-#   become: yes   # sudo privilge
-#   tasks:
-#     - name: copying file with owner and permision
-#       ansible.builtin.copy:
-#         src: /home/centos/alt
-#         dest: /home/centos/systemd.service
 ---
-- hosts: dev
+- name: demo on copy
+  hosts: all
+  become: yes   # sudo privilge
   tasks:
-    - name: Transfer file from ServerA to ServerB
-      synchronize:
+    - name: copying file with owner and permision
+      copy:
         src: /home/centos/alt
-        dest: /home/centos/
-        mode: pull
-      delegate_to: all
+        dest: /home/centos/systemd.service
+---
