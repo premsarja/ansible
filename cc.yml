@@ -5,6 +5,5 @@
   tasks:
     - name: copying file with owner and permision
       ansible.builtin.copy:
-      copy:
         src: /home/centos/ali
         dest: /home/centos/
