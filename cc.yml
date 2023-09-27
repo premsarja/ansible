@@ -8,7 +8,7 @@
 #         dest: /home/centos/systemd.service
 ---
 - name: Copy File from Node1 to All Nodes
-  hosts: centos@ip-172-31-89-42
+  hosts: all
   become: yes   # If needed for privilege escalation
   remote_user: 172.31.92.252  # Specify the remote user to connect as on target hosts
   tasks:
