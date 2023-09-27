@@ -5,5 +5,5 @@
   tasks:
     - name: copying file with owner and permision
       copy:
-        src: /home/centos/alt
-        dest: /home/centos/systemd.service
+        src: /home/centos/ali
+        dest: /home/centos/
