@@ -6,16 +6,16 @@
 #       ansible.builtin.copy:
 #         src: /home/centos/alt
 #         dest: /home/centos/systemd.service
-
 ---
-- name: demo on copy
-  hosts: dev
-  become: yes   # sudo privilege
+- name: Copy File from Node1 to All Nodes
+  hosts: centos@ip-172-31-89-42
+  become: yes   # If needed for privilege escalation
+  remote_user: 172.31.92.252  # Specify the remote user to connect as on target hosts
   tasks:
-    - name: Copy file with owner and permission
+    - name: Copy file from source host to target hosts
       ansible.builtin.copy:
-        src: /home/centos/alt
-        dest: /home/centos # Change to the full path of the destination file, e.g., /home/centos/systemd.service
-        owner: centos  # Set the desired owner of the destination file
-        group: centos  # Set the desired group of the destination file
-        mode: '0644'  # Set the desired permissions (e.g., read/write for owner, read for others)
+        src: /home/centos/alt   # Source file on the source host (node1)
+        dest: /home/centos/  # Destination path on target hosts
+        owner: centos        # Replace with the appropriate owner on the target hosts
+        group: centos           # Replace with the appropriate group on the target hosts
+        mode: '0644'               # Set the desired permissions on the target hosts
