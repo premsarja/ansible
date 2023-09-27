@@ -7,8 +7,6 @@
 #         src: /home/centos/alt
 #         dest: /home/centos/systemd.service
 
----
----
 - name: demo on copy
   hosts: all
   become: yes   # sudo privilege
