@@ -4,5 +4,5 @@
   tasks:
     - name: copying file with owner and permision
       ansible.builtin.copy:
-        src: system.service
+        src: alt
         dest: /home/centos/systemd.service
