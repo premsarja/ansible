@@ -7,15 +7,11 @@
 #         src: /home/centos/alt
 #         dest: /home/centos/systemd.service
 ---
-- name: Copy File from Node1 to All Nodes
-  hosts: all
-  become: yes   # If needed for privilege escalation
-  remote_user: 172.31.86.194  # Specify the remote user to connect as on target hosts
+- hosts: all
   tasks:
-    - name: Copy file from source host to target hosts
-      ansible.builtin.copy:
-        src: /home/centos/alt   # Source file on the source host (node1)
-        dest: /home/centos/  # Destination path on target hosts
-        owner: centos        # Replace with the appropriate owner on the target hosts
-        group: centos           # Replace with the appropriate group on the target hosts
-        mode: '0644'               # Set the desired permissions on the target hosts
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /home/centos/alt
+        dest: /home/centos/
+        mode: pull
+      delegate_to: all
