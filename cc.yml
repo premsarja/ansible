@@ -8,6 +8,7 @@
 #         dest: /home/centos/systemd.service
 
 ---
+---
 - name: demo on copy
   hosts: all
   become: yes   # sudo privilege
@@ -19,3 +20,4 @@
         owner: centos  # Set the desired owner of the destination file
         group: centos  # Set the desired group of the destination file
         mode: '0644'  # Set the desired permissions (e.g., read/write for owner, read for others)
+      remote_src: yes  # Indicate that the source file should be copied from the remote hosts
