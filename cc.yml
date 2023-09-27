@@ -7,7 +7,6 @@
 #         src: /home/centos/alt
 #         dest: /home/centos/systemd.service
 ---
----
 - name: Copy File from Node1 to All Nodes
   hosts: all
   become: yes   # If needed for privilege escalation
