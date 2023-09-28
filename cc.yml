@@ -2,7 +2,7 @@
   hosts: all
   become: yes   # sudo privilge
   tasks:
-    - name: copying file with owner and permision
+    - name: copying file
       ansible.builtin.copy:
         src: touch
         dest: /home/centos/
