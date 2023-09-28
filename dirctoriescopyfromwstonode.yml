@@ -5,5 +5,7 @@
     - name: Copy directory
       ansible.builtin.copy:
         src: /home/centos/ansible/touch  # Replace with your local source directory path
-        dest: /home/centos/ansible/  # Replace with the desired destination directory path on the remote host
-        recurse: yes  # Copy the entire directory recursively
+        dest: /home/centos/ansible/    # Replace with the desired destination directory path on the remote host
+        remote_src: yes  # Indicates that the source is on the control machine
+        delegate_to: localhost  # This ensures that the copy is done from the control machine
+
