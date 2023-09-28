@@ -6,4 +6,3 @@
       copy:
         src: /tmp/pp.text
         dest: ~/pp.text
-        remote_src: yes  
