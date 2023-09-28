@@ -4,6 +4,6 @@
   tasks:
     - name: copying file
       ansible.builtin.copy:
-        src: touch
+        src: /home/centos/touch
         dest: /home/centos/
         remote_src: yes  
