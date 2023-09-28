@@ -4,5 +4,5 @@
   tasks:
     - name: copying file with owner and permision
       ansible.builtin.copy:
-        src: /home/centos/conditions.yml
+        src: conditions.yml
         dest: /home/centos/
