@@ -5,4 +5,4 @@
     - name: copying file
       copy:
         src: /tmp/pp.text
-        dest: ~/pp.text
+        dest: /home/centos/
