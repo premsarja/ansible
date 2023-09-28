@@ -1,4 +1,3 @@
----
 - name: playbook to configure roboshop project 
   become: yes
   hosts: frontend
