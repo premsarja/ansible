@@ -1,12 +1,8 @@
----
 - name: demo on copy
   hosts: all
-  become: yes   # sudo privilege
+  become: yes   # sudo privilge
   tasks:
-      copy:
-        - src: /home/centos/alt
-        - dest: /home/centos/
-        - owner: centos
-        - group: centos
-        - mode: '0644'
-      remote_src: yes  # Specify that the source file exists on the Ansible controller
+    - name: copying file with owner and permision
+      ansible.builtin.copy:
+        src: /home/centos/conditions.yml
+        dest: /home/centos/
