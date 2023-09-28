@@ -5,4 +5,4 @@
     - name: copying file
       copy:
         src: /tmp/pp.text
-        dest: /home/centos/
+        dest: /home/centos/ansible/
