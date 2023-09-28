@@ -1,0 +1,9 @@
+- name: Copy directory to all nodes
+  hosts: all
+  become: yes  # If sudo privileges are required for copying
+  tasks:
+    - name: Copy directory
+      ansible.builtin.copy:
+        src: /home/centos/ansible/touch  # Replace with your local source directory path
+        dest: /home/centos/  # Replace with the desired destination directory path on the remote host
+        recurse: yes  # Copy the entire directory recursively
