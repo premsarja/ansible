@@ -4,5 +4,5 @@
   tasks:
     - name: copying file
       ansible.builtin.copy:
-        src: /home/centos/ansible/touch
-        dest: /home/centos/tmp
+        src: /home/centos/ansible/touch/
+        dest: /home/centos/
