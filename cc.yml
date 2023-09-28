@@ -5,5 +5,5 @@
     - name: copying file
       ansible.builtin.copy:
         src: /tmp/pp.text
-        dest: -/pp.text
+        dest: ~/pp.text
         remote_src: yes  
