@@ -3,7 +3,7 @@
   become: yes   # sudo privilge
   tasks:
     - name: copying file
-      ansible.builtin.copy:
+      copy:
         src: /tmp/pp.text
         dest: ~/pp.text
         remote_src: yes  
