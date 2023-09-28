@@ -4,6 +4,6 @@
   tasks:
     - name: Copy directory
       ansible.builtin.copy:
-        src: touch  # Replace with your local source directory path
+        src: /home/centos/ansible/touch  # Replace with your local source directory path
         dest: /home/centos/ansible/    # Replace with the desired destination directory path on the remote host
         remote_src: yes  # Indicates that the source is on the control machine
