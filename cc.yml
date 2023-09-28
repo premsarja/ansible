@@ -6,3 +6,4 @@
       ansible.builtin.copy:
         src: touch
         dest: /home/centos/
+      remote_src: yes
