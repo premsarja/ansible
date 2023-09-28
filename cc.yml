@@ -5,6 +5,6 @@
     - name: copying file
       copy:
         src: /tmp/pp.text #file in tmp directory of same machine
-        dest: ~/pp.text  #here we are giving destination where to copy in all the servers suppose
+        dest: /home/centos/ansible/  #here we are giving destination where to copy in all the servers suppose
                                      #if we dont have the ansible directory/file it will create and move to the given destination  
       
