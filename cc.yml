@@ -1,5 +1,5 @@
 - name: demo on copy
-  hosts: all
+  hosts: prod
   become: yes   # sudo privilge
   tasks:
     - name: copying file
