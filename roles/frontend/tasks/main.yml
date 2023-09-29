@@ -23,7 +23,7 @@
 
 - name: copying the proxy file 
   ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
+    src: roboshop.conf
     dest: /etc/nginx/deafault.d/roboshop.conf
 
 - name: starting nginx
