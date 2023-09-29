@@ -15,8 +15,13 @@
     path: /usr/share/nginx/html
     state: absent
 
-- name: coying the file
+- name: coying the frontend 
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html
     remote_src: yes    
+
+- name: copying the proxy file 
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/deafault.d/roboshop.conf
