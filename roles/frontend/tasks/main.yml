@@ -15,7 +15,7 @@
     path: /usr/share/nginx/html
     state: absent
 
-- name: coying the frontend 
+- name: copying the frontend 
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html
@@ -25,3 +25,10 @@
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/deafault.d/roboshop.conf
+
+- name: starting nginx
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+    daemon_reload: yes    
