@@ -28,14 +28,8 @@
     notify: restarting  nginx     # Whenever there is a change in this task, then this notify handler will call the task RESTARTING NGINX
 
 
--  name: Ensure Nginx is enabled
-   systemd:
-    name: nginx
-    enabled: yes
-    become: yes
-
 -  name: Ensure Nginx is started
    systemd:
-    name: nginx
-    state: started
-    become: yes
+     name: nginx
+     state: started
+   become: yes
