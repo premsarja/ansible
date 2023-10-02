@@ -26,3 +26,6 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
     notify: restarting  nginx     # Whenever there is a change in this task, then this notify handler will call the task RESTARTING NGINX
+
+- name: configuring service
+  ansible.builtin.shell: set-hostname {{component}}
