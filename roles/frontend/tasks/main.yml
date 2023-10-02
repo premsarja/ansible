@@ -18,17 +18,19 @@
 - name: copying the frontend 
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
-    dest: /usr/share/nginx/html
+    dest: /usr/share/nginx/html    # This ensure your source file to copy is non remote machine.
     remote_src: yes    
 
 - name: copying the proxy file 
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+  notify: restarting  nginx     # Whenever there is a change in this task, then this notify handler will call the task RESTARTING NGINX
+
 
 - name: starting nginx
   systemd:
     name: nginx
-    state: restarted
+    state: started
     enabled: yes
     daemon_reload: yes    
