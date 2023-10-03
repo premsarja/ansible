@@ -28,4 +28,4 @@
     notify: restarting  nginx     # Whenever there is a change in this task, then this notify handler will call the task RESTARTING NGINX
 
 - name: configuring service
-  ansible.builtin.shell: set-hostname {{component}}-{{dev}}
+  ansible.builtin.shell: set-hostname {{component}}
