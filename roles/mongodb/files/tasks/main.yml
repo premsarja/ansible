@@ -1,0 +1,16 @@
+- name: configuring the {{component}} repo 
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo   # This ensure your source file to copy is non remote machine.
+
+- name: installing {{component}}
+  ansible.builtin.package:
+    name: mongodb-org
+    state: present    
+
+- name: starting {{component}}
+  systemd:
+    name: nginx
+    state: restarted
+    enable: yes
+    daemon_reload: yes
