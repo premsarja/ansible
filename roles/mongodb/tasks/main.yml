@@ -13,6 +13,7 @@
     name: mongodb
     state: restarted
     enable: yes
-    
+    daemon-reload: yes
+
 - name: configuring service
   ansible.builtin.shell: set-hostname {{component}}-{{env}}    
