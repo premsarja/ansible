@@ -10,9 +10,9 @@
 
 - name: starting {{ component }}
   systemd:
-    name: mongodb
+    name: mongod
     state: restarted
     enabled: yes
-    
+
 - name: configuring service
   ansible.builtin.shell: set-hostname {{component}}-{{env}}
