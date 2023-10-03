@@ -10,7 +10,7 @@
 
 - name: starting {{component}}
   systemd:
-    name: nginx
+    name: mongodb
     state: restarted
     enable: yes
     daemon_reload: yes
