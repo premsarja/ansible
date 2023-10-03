@@ -10,7 +10,7 @@
 
 - name: starting {{component}}
   systemd:
-    name: mongodb
+    name: mongod
     state: restarted
     enable: yes
 
