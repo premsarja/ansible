@@ -30,7 +30,7 @@
 - name: starting nginx
   systemd:
     name: nginx
-    state: restarted
+    state: started
     daemon_reload: yes
   
 - name: configuring service
