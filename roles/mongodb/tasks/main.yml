@@ -26,7 +26,7 @@
     dest: /tmp
     remote_src: yes
 
-- name: injecting the {{component}} schema
+- name: injecting the "{{component}}" schema
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
