@@ -29,7 +29,7 @@
 - name: injecting the {{component}} schema
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/{{item}}.js" 
-    idepotent: yes
+    idempotent: yes
   loop:
     - users
     - catalogue
