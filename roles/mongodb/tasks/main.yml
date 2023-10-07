@@ -20,11 +20,19 @@
     state: restarted
     enabled: yes
 
-- name: download and extract schema
+- name: download and extract {{component}}
   ansible.builtin.unarchive:
     src: https://github.com/stans-robot-project/frontend/archive/main.zip
     dest: /tmp
     remote_src: yes
-    
+
+- name: injecting the {{component}} schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/{{item}}.js" 
+    idepotent: yes
+  loop:
+    - users
+    - catalogue
+
 - name: configuring service
   ansible.builtin.shell: set-hostname {{component}}-{{env}}
