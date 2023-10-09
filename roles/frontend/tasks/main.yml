@@ -35,4 +35,4 @@
     daemon_reload: yes   
 
 - name: configuring service
-  ansible.builtin.shell: set-hostname {{component}}-"{ENV}"
+  ansible.builtin.shell: set-hostname {{component}}.{{ENV}}
