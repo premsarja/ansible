@@ -34,6 +34,7 @@
   loop:
     - users
     - catalogue
- 
+- remote_src: yes    
+
 - name: configuring service
   ansible.builtin.shell: set-hostname "{{component}}-{{ENV}}"
