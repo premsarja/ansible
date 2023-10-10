@@ -7,9 +7,9 @@
     name: nodejs
     state: present
   
-- name: creating {{APPUSER}}
+- name: creating "{{APPUSER}}"
   ansible.builtin.user:
-    name: {{APPUSER}}
+    name: "{{APPUSER}}"
     comment: roboshop app user
 
 - name: download and extract {{component}}
