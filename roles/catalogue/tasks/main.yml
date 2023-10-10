@@ -25,7 +25,7 @@
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
-    src: /tmp/{{component}}-main/
+    src: /tmp/*
     dest: /home/{{APPUSER}}/{{component}}-main/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
