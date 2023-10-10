@@ -18,11 +18,11 @@
     dest: /tmp
     remote_src: yes
 
-- name: performing {{component}} cleanup
+- name: Performing {{component}} cleanup
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{component}}
     state: absent
-  ignore_errors: yes
+    ignore_errors: yes
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
