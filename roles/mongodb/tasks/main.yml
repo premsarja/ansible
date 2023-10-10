@@ -1,3 +1,4 @@
+---
 - name: configuring the {{component}} repo 
   ansible.builtin.copy:
     src: mongo.repo
@@ -36,4 +37,4 @@
   remote_src: yes
  
 - name: configuring service
-  ansible.builtin.shell: set-hostname {{component}}-"{{ENV}}"
+  ansible.builtin.shell: set-hostname "{{component}}-{{ENV}}"
