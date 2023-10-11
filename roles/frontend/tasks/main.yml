@@ -9,3 +9,20 @@
         name: nginx
         state: started
         enabled: yes
+
+- name: download link
+  ansible.builtin.unarchive:
+    src: https://github.com/stans-robot-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: Remove file (delete file)
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent    
+
+- name: copying file which is in tmp directory
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html
+    
