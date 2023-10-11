@@ -3,4 +3,9 @@
   ansible.builtin.package:
      name: nginx
      state: present
-     
+
+- name: Ensure nginx is running
+  systemd:
+        name: nginx
+        state: started
+        enabled: yes
