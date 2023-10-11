@@ -1,38 +1,6 @@
 ---
-- name: installing nginx
+- name: install nginx
   ansible.builtin.package:
-    name: nginx
-    state: present
-
-- name: downloading the link and unarchiving 
-  ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/frontend/archive/main.zip
-    dest: /tmp
-    remote_src: yes
-
-- name: performing cleanup 
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
-
-- name: copying the frontend 
-  ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
-    dest: /usr/share/nginx/html    # This ensure your source file to copy is non remote machine.
-    remote_src: yes    
-
-- name: copying the proxy file 
-  ansible.builtin.copy:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
-    # notify: restarting nginx     # Whenever there is a change in this task, then this notify handler will call the task RESTARTING NGINX
-
-- name: Starting nginx 
-  systemd:
-    name: nginx
-    state: restarted
-    enabled: yes
-    daemon_reload: yes   
-
-- name: configuring service
-  ansible.builtin.shell: set-hostname "{{component}}-{{ENV}}"
+     name: nginx
+     state: present
+     
