@@ -2,3 +2,14 @@
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongodb.repo   # This ensure your source file to copy is non remote machine.
+
+- name: installing mongodb 
+  ansible.builtin.package:
+    name: yum install -y mongodb-org
+    state: present
+
+- name: reloaded mongodb 
+  ansible.builtin.systemd:
+    name: mongodb
+    state: restarted
+        
