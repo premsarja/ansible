@@ -1,0 +1,4 @@
+- name: configuring the {{component}} repo 
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo   # This ensure your source file to copy is non remote machine.
