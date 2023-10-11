@@ -5,7 +5,7 @@
 
 - name: installing mongodb 
   ansible.builtin.package:
-    name: yum install -y mongodb-org
+    name: mongodb-org
     state: present
 
 - name: reloaded mongodb 
