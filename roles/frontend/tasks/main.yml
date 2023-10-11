@@ -33,4 +33,13 @@
     dest: /files/roboshop.conf
     remote_src: yes
 
+- name: copying the proxy file 
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+      
+- name: reloaded nginx
+  ansible.builtin.systemd:
+    name: nginx.service
+    state: reloaded
     
