@@ -1,0 +1,7 @@
+---
+
+- name: installing nodejs
+  ansible.builtin.package:
+    name: nodejs
+    state: present
+    
