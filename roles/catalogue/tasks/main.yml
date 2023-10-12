@@ -33,16 +33,16 @@
 
 - name: Install package.json.
   community.general.npm:
-    path: "/home/{{APPUSER}}/catalogue/"
+    path: /home/{{APPUSER}}/catalogue/
 
 - name: copying the systemd file
   ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/{{component}}.service
 
-- name: starting {component}
+- name: starting {{component}}
   systemd:
-    name: "{component}"
+    name: "{{component}}"
     state: restarted 
     enabled: yes
     daemon_reload: yes
