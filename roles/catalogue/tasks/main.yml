@@ -37,7 +37,7 @@
   ignore_errors: yes
 
 - name: copying the systemd file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/{{component}}.service
 
