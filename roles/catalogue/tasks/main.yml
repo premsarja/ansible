@@ -28,3 +28,7 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes   
+
+- name: Install packages based on package.json.
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{component}}/
