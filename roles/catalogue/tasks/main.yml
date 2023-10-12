@@ -1,4 +1,6 @@
 ---
+- name: installing the url 
+  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | bash -
 
 - name: installing nodejs
   ansible.builtin.package:
