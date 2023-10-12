@@ -32,7 +32,7 @@
     group: "{{APPUSER}}"
     remote_src: yes   
 
-- name: Install package.json.
+- name: Install package
   community.general.npm:
     path: /home/{{APPUSER}}/catalogue/
   
