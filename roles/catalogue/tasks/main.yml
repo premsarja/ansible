@@ -22,6 +22,7 @@
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{component}}
     state: absent
+  ignore_errors: yes 
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
@@ -36,7 +37,7 @@
     path: /home/{{APPUSER}}/catalogue/
 
 - name: copying the systemd file
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: systemd.service
     dest: /etc/systemd/system/{{component}}.service
 
