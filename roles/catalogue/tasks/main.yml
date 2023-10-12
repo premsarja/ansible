@@ -34,8 +34,7 @@
 - name: Install package.json.
   community.general.npm:
     path: /home/{{APPUSER}}/catalogue/
-  ignore_errors: yes
-
+  
 - name: copying the systemd file
   ansible.builtin.template:
     src: systemd.service
