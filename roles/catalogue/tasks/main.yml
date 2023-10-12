@@ -31,14 +31,9 @@
     group: "{{APPUSER}}"
     remote_src: yes   
 
-- name: installing nodejs
-  ansible.builtin.package:
-    name: nodejs
-    state: present
-
-- name: Install packages based on package.json.
+- name: Install package.json.
   community.general.npm:
-    path: /home/{{APPUSER}}/{{component}}/
+    path: /home/{{APPUSER}}/{{component}}
 
 - name: copying the systemd file
   ansible.builtin.template:
