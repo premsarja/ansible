@@ -39,7 +39,7 @@
 
 - name: Your 
   community.general.npm:
-    path: /home/{{APPUSER}}/{{component}}-main/{{component}}-main
+    path: /home/roboshop/catalogue-main/catalogue-main
 
 - name: copying the systemd file
   ansible.builtin.template:
