@@ -40,7 +40,7 @@
 - name: copying the systemd file
   ansible.builtin.template:
     src: systemd.service
-    dest: /etc/systemd/system/{{component}}-service
+    dest: /etc/systemd/system/{{component}}.service
    
 - name: starting service
   systemd:
