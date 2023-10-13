@@ -43,8 +43,11 @@
     dest: /etc/systemd/system/{{component}}-service
    
 - name: starting service
-  ansible.builtin.systemd:
+  systemd:
     name: "{{component}}"
     state: restarted
     enabled: yes
     daemon_reload: yes
+
+- name: configuring servicing name
+  ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
