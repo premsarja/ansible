@@ -34,7 +34,8 @@
 
 - name: Install packages based on package.json.
   community.general.npm:
-    path: /home/roboshop/catalogue-main
+    path: /home/roboshop
+
 
 # - name: copying the systemd file
 #   ansible.builtin.template:
