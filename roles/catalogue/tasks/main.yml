@@ -44,7 +44,7 @@
    
 - name: starting service
   systemd:
-    name: "{{component}}"
+    name: catalogue.service
     state: restarted
     enabled: yes
     daemon_reload: yes
