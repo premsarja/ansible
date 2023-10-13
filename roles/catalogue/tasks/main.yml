@@ -9,7 +9,7 @@
   
 - name: creating {{APPUSER}}
   ansible.builtin.user:
-    name: {{APPUSER}}
+    name: "{{APPUSER}}"
     comment: roboshop app user
 
 - name: download and extract "{{component}}"
@@ -26,7 +26,7 @@
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
-    src: /tmp/{{component}}-main
+    src: /tmp/{{component}}-main/
     dest: /home/{{APPUSER}}/{{component}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
@@ -47,6 +47,6 @@
      state: restarted
      enabled: yes
      daemon_reload: yes
-
+     
 - name: configuring servicing name
   ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
