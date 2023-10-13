@@ -3,7 +3,7 @@
   ansible.builtin.package:
      name: nginx
      state: present
-  tags: frontend
+  tags: backend
 
 - name: Ensure nginx is running
   systemd:
