@@ -32,9 +32,9 @@
     group: "{{APPUSER}}"
     remote_src: yes
 
-# - name: Your 
-#   community.general.npm:
-#     path: /home/roboshop/catalogue-main/
+- name: Your 
+  community.general.npm:
+    path: /home/roboshop/catalogue-main/
 
 # - name: copying the systemd file
 #   ansible.builtin.template:
