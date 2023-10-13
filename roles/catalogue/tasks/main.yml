@@ -22,7 +22,7 @@
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{component}}
     state: absent
-    ignore_errors: yes
+  ignore_errors: yes
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
@@ -33,7 +33,7 @@
     remote_src: yes
 
 - name: generating artifact with npm install 
-  community.general.npm:
+  community-general.npm:
     path: /home/{{APPUSER}}/{{component}}/
 
 - name: copying the systemd file
