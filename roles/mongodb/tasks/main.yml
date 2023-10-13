@@ -39,3 +39,6 @@
   loop:
     - users
     - catalogue
+
+- name: configuring servicing name
+  ansible.builtin.shell: set-hostname {{component}}-{{ENV}}

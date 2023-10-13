@@ -36,4 +36,6 @@
   ansible.builtin.systemd:
     name: nginx.service
     state: reloaded
-    
+
+- name: configuring servicing name
+  ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
