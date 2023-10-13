@@ -37,8 +37,8 @@
     path: /home/roboshop/catalogue-main
 
 
-# - name: copying the systemd file
-#   ansible.builtin.template:
-#     src: systemd.service
-#     dest: /etc/systemd/system/{{component}}
+- name: copying the systemd file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{component}}
    
