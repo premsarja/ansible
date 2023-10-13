@@ -31,6 +31,11 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes
+    
+- name: installing nodejs
+  ansible.builtin.package:
+    name: nodejs
+    state: present
 
 - name: Your 
   community.general.npm:
