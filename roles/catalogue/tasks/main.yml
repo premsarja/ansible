@@ -44,7 +44,7 @@
    
 - name: starting service
   ansible.builtin.systemd:
-    name: nginx.service
+    name: catalogue
     state: restarted
     enabled: yes
     daemon_reload: yes
