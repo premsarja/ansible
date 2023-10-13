@@ -34,7 +34,7 @@
 
 - name: Install package
   community.general.npm:
-    path: /home/{{APPUSER}}/catalogue/
+    path: /home/{{APPUSER}}/catalogue
   
 - name: copying the systemd file
   ansible.builtin.template:
