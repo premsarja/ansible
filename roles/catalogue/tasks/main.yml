@@ -24,20 +24,20 @@
     state: absent
   ignore_errors: yes
 
-- name: copying the file to {{APPUSER}} home directory
-  ansible.builtin.copy:
-    src: /tmp/{{component}}-main
-    dest: /home/{{APPUSER}}/{{component}}-main
-    owner: "{{APPUSER}}"
-    group: "{{APPUSER}}"
-    remote_src: yes
+# - name: copying the file to {{APPUSER}} home directory
+#   ansible.builtin.copy:
+#     src: /tmp/{{component}}-main
+#     dest: /home/{{APPUSER}}/{{component}}-main
+#     owner: "{{APPUSER}}"
+#     group: "{{APPUSER}}"
+#     remote_src: yes
 
-- name: Your 
-  community.general.npm:
-    path: /home/roboshop/catalogue-main/
+# - name: Your 
+#   community.general.npm:
+#     path: /home/roboshop/catalogue-main/
 
-- name: copying the systemd file
-  ansible.builtin.template:
-    src: systemd.service
-    dest: /etc/systemd/system/{{component}}
+# - name: copying the systemd file
+#   ansible.builtin.template:
+#     src: systemd.service
+#     dest: /etc/systemd/system/{{component}}
    
