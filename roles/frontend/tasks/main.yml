@@ -3,7 +3,7 @@
   ansible.builtin.package:
      name: nginx
      state: present
-
+  
 - name: Ensure nginx is running
   systemd:
         name: nginx
@@ -20,6 +20,7 @@
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent    
+  tags: frontend
 
 - name: copying file which is in tmp directory
   ansible.builtin.copy:
