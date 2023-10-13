@@ -33,7 +33,7 @@
     remote_src: yes
 
 - name: generating artifact with npm install 
-  community-general.npm:
+  community.general.npm:
     path: /home/{{APPUSER}}/{{component}}/
 
 - name: copying the systemd file
