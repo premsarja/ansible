@@ -33,9 +33,9 @@
     dest: /etc/nginx/default.d/roboshop.conf
       
 - name: reloaded nginx
-  systemd:
+  ansible.builtin.systemd:
     name: nginx.service
     state: reloaded
-    daemon_reload: yes
+
 - name: configuring servicing name
   ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
