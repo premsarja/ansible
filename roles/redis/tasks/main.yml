@@ -1,0 +1,30 @@
+- name: configuring the {{component}} repo 
+  ansible.builtin.copy:
+    src: redis.repo
+    dest: /etc/yum.repos.d/{{component}}.repo   # This ensure your source file to copy is non remote machine.
+
+- name: installing {{component}} 
+  ansible.builtin.package:
+    name: redis-6.2.12
+    state: present
+
+- name: reloaded mongodb 
+  ansible.builtin.systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+
+- name: configuring the {{component}} visibility
+  ansible.builtin.replace:
+    path: /etc/{{component}}.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: starting {{component}}
+  systemd:
+    name: redis
+    state: restarted
+    enabled: yes
+
+- name: configuring servicing name
+  ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
