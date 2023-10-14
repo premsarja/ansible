@@ -14,8 +14,8 @@
 
 - name: download and extract "{{component}}"
   ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/{{component}}/archive/main.zip
-    dest: /tmp/{{component}}.zip
+    src: "https://github.com/stans-robot-project/{{component}}/archive/main.zip"
+    dest: /tmp/{{component}}
     remote_src: yes
 
 - name: Performing {{component}} cleanup
