@@ -8,9 +8,9 @@
     name: redis-6.2.12
     state: present
 
-- name: reloaded mongodb 
+- name: reloaded {{component}} 
   ansible.builtin.systemd:
-    name: mongod
+    name: {{component}}
     state: restarted
     enabled: yes
 
