@@ -1,3 +1,4 @@
+---
 - name: configuring the {{component}} repo 
   ansible.builtin.copy:
     src: redis.repo
@@ -8,11 +9,11 @@
     name: redis-6.2.12
     state: present
 
-- name: reloaded {{component}} 
-  ansible.builtin.systemd:
-    name: {{component}}
-    state: restarted
-    enabled: yes
+# - name: reloaded {{component}} 
+#   ansible.builtin.systemd:
+#     name: {{component}}
+#     state: restarted
+#     enabled: yes
 
 - name: configuring the {{component}} visibility
   ansible.builtin.replace:
