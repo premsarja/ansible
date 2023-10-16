@@ -1,0 +1,14 @@
+- name: copying the systemd file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{component}}.service
+   
+- name: starting MyService
+  systemd:
+     name: "{{component}}"
+     state: restarted
+     enabled: yes
+     daemon_reload: yes
+     
+- name: configuring servicing name
+  ansible.builtin.shell: set-hostname {{component}}-{{ENV}}
