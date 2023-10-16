@@ -32,7 +32,7 @@
     group: "{{APPUSER}}"
     remote_src: yes
 
-- name: generating artifactwith npm install
+- name: generating artifact with npm install
   community.general.npm:
     path: /home/roboshop/{{component}}/
 
