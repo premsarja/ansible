@@ -25,3 +25,8 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: config_service
+
+- name: set-name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-name.yml
