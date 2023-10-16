@@ -18,6 +18,12 @@
     dest: /tmp
     remote_src: yes
 
+- name: download and extract "{{component}}"
+  ansible.builtin.unarchive:
+    src: https://github.com/stans-robot-project/catalogue/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
 - name: Performing {{component}} cleanup
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{component}}
@@ -26,7 +32,7 @@
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
-    src: /tmp/{{component}}-main
+    src: /tmp/{{component}}-main/
     dest: /home/{{APPUSER}}/{{component}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
@@ -35,7 +41,6 @@
 - name: generating artifactwith npm install
   community.general.npm:
     path: /home/roboshop/{{component}}/
-
 - name: copying the systemd file
   ansible.builtin.template:
     src: systemd.service
