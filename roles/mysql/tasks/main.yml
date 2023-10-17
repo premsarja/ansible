@@ -1,0 +1,25 @@
+- name: configuring the {{component}} repo 
+  ansible.builtin.copy:
+    src: {{component}}.repo
+    dest: /etc/yum.repos.d/{{component}}.repo   # This ensure your source file to copy is non remote machine.
+
+- name: installing {{component}} 
+  ansible.builtin.package:
+    name: mysql-community-server -y
+    state: present
+
+- name: starting {{component}}
+  systemd:
+    name: mysql
+    state: restarted
+    enabled: yes
+
+- name: fetches the log from the remote node
+  ansible.builtin.slurp:
+    src: /var/log/mysq1d.log
+  register: pwd_log 
+
+- name: extracting the root password
+  ansible.builtin.set_fact:
+    DEAFAULT_PASSWORD: "{{pwd_log}}[ 'content' ]| 
+   
