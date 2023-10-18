@@ -20,6 +20,10 @@
     src: /var/log/mysqld.log
   register: pwd_log 
 
+- name: displaying the password
+  ansible.builtin.debug:
+    msg: "{{pwd_log}}"
+
 # - name: extracting the root password
 #   ansible.builtin.set_fact:
 #     DEAFAULT_PASSWORD: "{{pwd_log}}[ 'content' ]|
