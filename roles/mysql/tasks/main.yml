@@ -6,7 +6,7 @@
 
 - name: installing {{component}} 
   ansible.builtin.package:
-    name: mysql-community-server -y
+    name: mysql-community-server 
     state: present
 
 - name: starting {{component}}
