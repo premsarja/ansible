@@ -11,7 +11,7 @@
 
 - name: starting {{component}}
   systemd:
-    name: mysql
+    name: mysqld
     state: restarted
     enabled: yes
 
