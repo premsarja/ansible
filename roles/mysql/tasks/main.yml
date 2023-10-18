@@ -20,7 +20,6 @@
     src: /var/log/mysq1d.log
   register: pwd_log 
 
-- name: extracting the root password
-  ansible.builtin.set_fact:
-    DEAFAULT_PASSWORD: "{{pwd_log}}[ 'content' ]| 
-   
+# - name: extracting the root password
+#   ansible.builtin.set_fact:
+#     DEAFAULT_PASSWORD: "{{pwd_log}}[ 'content' ]|
