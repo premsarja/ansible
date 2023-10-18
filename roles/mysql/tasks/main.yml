@@ -17,7 +17,7 @@
 
 - name: fetches the log from the remote node
   ansible.builtin.slurp:
-    src: /var/log/mysq1d.log
+    src: /var/log/mysqld.log
   register: pwd_log 
 
 # - name: extracting the root password
