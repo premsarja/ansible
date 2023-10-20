@@ -27,3 +27,7 @@
 - name: extracting the root password
   ansible.builtin.set_fact:
     DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join('') | split(' ')| last }}"
+
+- name: pprinting
+  ansible.builtin.debug:
+    msg: value is {{DEFAULT_PASSWORD}}
