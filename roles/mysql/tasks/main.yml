@@ -1,7 +1,7 @@
 ---
 - name: configuring the {{component}} repo 
   ansible.builtin.copy:
-    src: mysql.repo.yml
+    src: mysql-repo.yml
     dest: /etc/yum.repos.d/{{component}}.repo   # This ensure your source file to copy is non remote machine.
 
 - name: installing {{component}} 
