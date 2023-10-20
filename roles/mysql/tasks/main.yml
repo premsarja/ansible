@@ -64,3 +64,8 @@
     login_user: root
     login_password: "{{ROOT_PASSWORD}}"
     target: /tmp/mysql-main/shipping.sql    
+
+- name: set-name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-name.yml
