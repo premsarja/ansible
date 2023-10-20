@@ -42,7 +42,7 @@
        ansible.builtin.debug:
          msg: value is {{DEFAULT_PASSWORD}}
      
-     - name: resetting the default root password of {{componet}}
+     - name: resetting the  root password of {{component}}
        ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY "{{ROOT_PASSWORD}}";" | mysql --connect-expired-password -uroot -p "{{DEFAULT_PASSWORD}}"
      
      - name: removing {{component}} password validation plugin
