@@ -58,7 +58,7 @@
     remote_src: yes
 
 - name: injecting schema
-  community.mysql.mysql_do:
+  community.mysql.mysql_db:
     state: import
     name: all
     target: /tmp/mysql-main/shipping.sql    
