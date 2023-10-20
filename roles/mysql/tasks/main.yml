@@ -15,26 +15,38 @@
     state: restarted
     enabled: yes
 
-- name: fetches the log from the remote node
-  ansible.builtin.slurp:
-    src: /var/log/mysqld.log
-  register: pwd_log 
+# block and rescue works together : if any task in the block fails then rescue task will be executed
 
-- name: displaying the password
-  ansible.builtin.debug:
-    msg: "{{pwd_log}}"
-
-- name: extracting the root password
-  ansible.builtin.set_fact:
-    DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join('') | split(' ')| last }}"
-
-- name: pprinting
-  ansible.builtin.debug:
-    msg: value is {{DEFAULT_PASSWORD}}
-
-- name: resetting the default root password of {{componet}}
-  ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Roboshop@1'" | mysql --connect-expired-password -uroot -p{{DEFAULT_PASSWORD}}
-
-- name: removing {{component}} password validation plugin
-  ansible.builtin.shell: echo "uninstall plugin validate_password" | mysql -uroot -pRoboShop@1
-      
+- name: verifying the password
+  block:
+    - name: fetch mysql version 
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: RoboShop@1
+        filter: version
+  
+  rescue:
+    
+     - name: fetches the log from the remote node
+       ansible.builtin.slurp:
+         src: /var/log/mysqld.log
+       register: pwd_log 
+     
+     - name: displaying the password
+       ansible.builtin.debug:
+         msg: "{{pwd_log}}"
+     
+     - name: extracting the root password
+       ansible.builtin.set_fact:
+         DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join('') | split(' ')| last }}"
+     
+     - name: printing
+       ansible.builtin.debug:
+         msg: value is {{DEFAULT_PASSWORD}}
+     
+     - name: resetting the default root password of {{componet}}
+       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Roboshop@1'" | mysql --connect-expired-password -uroot -p{{DEFAULT_PASSWORD}}
+     
+     - name: removing {{component}} password validation plugin
+       ansible.builtin.shell: echo "uninstall plugin validate_password" | mysql -uroot -pRoboShop@1
+           
