@@ -24,9 +24,7 @@
         login_user: root
         login_password: RoboShop@1
         filter: version
-  
   rescue:
-    
      - name: fetches the log from the remote node
        ansible.builtin.slurp:
          src: /var/log/mysqld.log
@@ -45,8 +43,8 @@
          msg: value is {{DEFAULT_PASSWORD}}
      
      - name: resetting the default root password of {{componet}}
-       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Roboshop@1'" | mysql --connect-expired-password -uroot -p{{DEFAULT_PASSWORD}}
+       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ROOT_PASSWORD}}';" | mysql --connect-expired-password -uroot -p{{DEFAULT_PASSWORD}}
      
      - name: removing {{component}} password validation plugin
-       ansible.builtin.shell: echo "uninstall plugin validate_password" | mysql -uroot -pRoboShop@1
+       ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1
            
