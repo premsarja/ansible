@@ -57,7 +57,7 @@
     dest: /tmp
     remote_src: yes
 
-- name: injecting schema 
+- name: injecting schema
   community.mysql.mysql_do:
     state: import
     name: all
